@@ -1,0 +1,18 @@
+{# templates/home/home.html.twig #}
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <main>
+        <ul class="items">
+            <li>Aller à la salle <span class="close">&times;</span></li>
+            <li class="checked">Payer les factures <span class="close">&times;</span></li>
+            <li>Rencontrer George <span class="close">&times;</span></li>
+            <li>Acheter des oeufs <span class="close">&times;</span></li>
+            <li>Lire un livre <span class="close">&times;</span></li>
+        </ul>
+        <form id="newItemForm">
+            <input class="txtNewItem" type="text" placeholder="Créer une note..." />
+            <input type="image" src="{{ asset('images/Button.png') }}" alt="Add" />
+        </form>
+    </main>
+
+{% endblock %}
