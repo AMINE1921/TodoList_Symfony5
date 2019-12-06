@@ -1,5 +1,7 @@
 {# templates/home/home.html.twig #}
 {%  extends 'base.html.twig' %}
+{% block icon %}href="{{ asset('images/favicon.png') }}" rel="icon"{% endblock %}
+{% block title %}ToDOiT{% endblock %}
 {% block body %}
     <main>
         <ul class="items">
