@@ -9,9 +9,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class TodoListController extends AbstractController
 {
     /**
-     * @Route("/todolist")
+     * @Route("/")
      */
-    public function number()
+    public function index()
     {
 
         return $this->render('home/home.html.twig');
