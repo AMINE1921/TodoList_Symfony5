@@ -59,7 +59,7 @@ ul.items li.checked {
   border-left: 3px solid #FFD506;
 }
 
-#newItemForm {
+#newItemForm, #newItemForm2 {
   position: fixed;
   bottom: 50px;
   right: 50px;
