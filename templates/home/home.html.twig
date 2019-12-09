@@ -3,11 +3,11 @@
 {% block title %}ToDOiT{% endblock %}
 {% block body %}
     <main>
-        {% for todo in list  %}
         <ul class="items">
-            <li>{{ todo.todo }} <span class="close">&times;</span></li>
+            {% for tasks in list  %}
+                <li>{{ tasks.todo }} <span class="close">&times;</span></li>
+            {%  endfor %}
         </ul>
-        {%  endfor %}
         <form id="newItemForm">
             <input class="txtNewItem" type="text" placeholder="Créer une note..." />
             <input type="image" src="{{ asset('images/Button.png') }}" alt="Add" />
