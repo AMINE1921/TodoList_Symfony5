@@ -8,6 +8,7 @@ use App\Repository\ListTodoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class TodoListController extends AbstractController
 {
 
@@ -19,20 +20,20 @@ class TodoListController extends AbstractController
     }
 
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      */
 
     public function index()
     {
-//        $ajout = new ListTodo();
-//        $ajout->setIdUser(1)
-//            ->setTodo('Deuxieme test');
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($ajout);
-//        $em->flush();
+        $test = 13;
+        if($test ==12) {
 
-    $todo = $this->repository->findAll();
-        return $this->render('home/home.html.twig', [
-        'list' => $todo]);
+            $todo = $this->repository->findAll();
+            return $this->render('home/home.html.twig', [
+                'list' => $todo]);
+        }
+        else {
+            return $this->render('home/homeNonConnecte.html.twig');
+        }
     }
 }
