@@ -25,15 +25,8 @@ class TodoListController extends AbstractController
 
     public function index()
     {
-        $test = 13;
-        if($test ==12) {
-
-            $todo = $this->repository->findAll();
-            return $this->render('home/home.html.twig', [
-                'list' => $todo]);
-        }
-        else {
-            return $this->render('home/homeNonConnecte.html.twig');
-        }
+        $todo = $this->repository->findAll();
+        return $this->render('home/home.html.twig', [
+            'list' => $todo]);
     }
 }

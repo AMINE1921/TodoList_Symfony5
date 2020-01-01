@@ -44,12 +44,4 @@ $(function () {
         $(this).toggleClass("checked");
     });
 
-    function functionInterdit() {
-        $('#newItemForm2').click(function () {
-            alert("Vous devez vous connecter !");
-        })
-    };
-
-    functionInterdit();
-
 })
