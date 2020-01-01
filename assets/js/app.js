@@ -36,6 +36,7 @@ $(function () {
         if (text !== '') {
             $list.append('<li>' + text + ' <span class="close">\u00D7</span> </li>');
             $('input:text').val('');
+            alert("Faites attention, vous n'êtes pas connecté ! ceci n'est qu'un test qui sera effacé lorsque la page sera fermée");
             cacher();
         }
     });
