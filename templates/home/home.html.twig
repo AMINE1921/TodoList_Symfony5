@@ -6,10 +6,28 @@
     <main>
         {% if app.user %}
             <ul class="items">
+
                 {% for tasks in list  %}
-                    <li>{{ tasks.todo }} <span class="close">&times;</span></li>
+                    {% if tasks.idUser == app.user.id %}
+
+                    <li>{{ tasks.todo }} <span class="close"><form method="post" action="{{ path('delete', {id: tasks.id}) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ tasks.id) }}">
+                            <button style="border: none; background: none">&times;</button>
+                        </form></span></li>
+                    {% endif %}
                 {%  endfor %}
+
             </ul>
+
+            <div id="newItemForm">
+                {{ form_start(form) }}
+                <div>
+                    {{ form_widget(form.todo, {'attr': {'placeholder': 'Créer une note...'}, 'value': '' }) }}
+                <input type="image" src="{{ asset('images/Button.png') }}" alt="Add" />
+                </div>
+                {{ form_end(form) }}
+            </div>
 
         {% else %}
             <ul class="items">
@@ -20,12 +38,13 @@
                 <li>Lire un livre <span class="close">&times;</span></li>
             </ul>
 
+            <form id="newItemForm">
+                <input class="txtNewItem" type="text" placeholder="Créer une note..." />
+                <input type="image" src="{{ asset('images/Button.png') }}" alt="Add" />
+            </form>
+
         {% endif %}
 
-        <form id="newItemForm">
-            <input class="txtNewItem" type="text" placeholder="Créer une note..." />
-            <input type="image" src="{{ asset('images/Button.png') }}" alt="Add" />
-        </form>
     </main>
 
 {% endblock %}
